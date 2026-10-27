@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Bloom | Student Task Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand-icon" aria-hidden="true">✿</div>
+      <p class="eyebrow">A LITTLE MORE ORGANIZED</p>
+      <h1>Study Bloom</h1>
+      <p class="subtitle">Your assignments, plans, and progress — all in one place.</p>
+    </header>
+
+    <section class="summary" aria-label="Task summary">
+      <div class="summary-card"><span>Total tasks</span><strong id="total-count">0</strong></div>
+      <div class="summary-card"><span>To do</span><strong id="todo-count">0</strong></div>
+      <div class="summary-card"><span>Completed</span><strong id="done-count">0</strong></div>
+    </section>
+
+    <section class="panel" aria-labelledby="form-title">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">MAKE A PLAN</p>
+          <h2 id="form-title">Add a task</h2>
+        </div>
+        <span class="small-flower" aria-hidden="true">✧</span>
+      </div>
+      <form id="task-form">
+        <label for="task-title">Task or assignment</label>
+        <input id="task-title" type="text" maxlength="100" placeholder="e.g. Finish maths worksheet" required>
+
+        <div class="form-grid">
+          <div>
+            <label for="task-subject">Subject</label>
+            <select id="task-subject">
+              <option>General</option>
+              <option>Mathematics</option>
+              <option>Science</option>
+              <option>English</option>
+              <option>Computer Science</option>
+              <option>History</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="task-due">Due date</label>
+            <input id="task-due" type="date">
+          </div>
+        </div>
+
+        <label for="task-priority">Priority</label>
+        <select id="task-priority">
+          <option value="Normal">Normal</option>
+          <option value="High">High</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <button type="submit" class="primary-button">Add to my plan <span aria-hidden="true">↗</span></button>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="tasks-section" aria-labelledby="tasks-title">
+      <div class="tasks-heading">
+        <div>
+          <p class="eyebrow">YOUR CHECKLIST</p>
+          <h2 id="tasks-title">My tasks</h2>
+        </div>
+        <label class="filter-label" for="task-filter">
+          <span>Show</span>
+          <select id="task-filter">
+            <option value="all">All tasks</option>
+            <option value="todo">To do</option>
+            <option value="done">Completed</option>
+          </select>
+        </label>
+      </div>
+      <div id="task-list" class="task-list"></div>
+      <p id="empty-state" class="empty-state">Nothing on your list yet. Add one task and start small. 🌱</p>
+    </section>
+
+    <footer>Small steps still move you forward <span aria-hidden="true">♡</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
